@@ -23,7 +23,7 @@ foreach(var to in mimeMessage.To.Mailboxes)
         Name = to.Name
     });
 }
-message.Content = mimeMessage.HtmlBody;
+message.Content = mimeMessage.TextBody ?? mimeMessage.HtmlBody ;
 
 foreach (var attachment in mimeMessage.Attachments)
 {
